@@ -14,6 +14,14 @@ Moreover, users using Android version >= Marshmallow will be allowed to allow or
 This permission will be exclusively used to ALLOW USER TO CALL FREQUENT CONTACTS from within the App. The permission won't be used to collect or send/share data to third parties.
 Moreover, users using Android version >= Marshmallow will be allowed to allow or deny this permission (but calls won't work).
 
+- Notifications access:
+
+This permission will be exclusively used to ALLOW THE APP TO INFORM THE USER AN APP RECEIVED A NOTIFICATION. The permission won't be used to collect or send/share data to third parties.
+Without this permission this feature won't work. This is applied to all Android versions supported.
+
+
+
+
 Best regards,
 
 Enrico D'Ortenzio
