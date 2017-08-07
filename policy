@@ -12,7 +12,7 @@ Moreover, users using Android version >= Marshmallow will be allowed to allow or
 - android.permission.CALL_PHONE
 
 This permission will be exclusively used to ALLOW USER TO CALL FREQUENT CONTACTS from within the App. The permission won't be used to collect or send/share data to third parties.
-Moreover, users using Android version >= Marshmallow will be allowed to allow or deny this permission (but frequent contacts won't work).
+Moreover, users using Android version >= Marshmallow will be allowed to allow or deny this permission (but calls won't work).
 
 Best regards,
 
