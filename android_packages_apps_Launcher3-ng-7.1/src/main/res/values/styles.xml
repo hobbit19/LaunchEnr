@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <!-- Light Theme -->
+    <style name="BaseLauncherTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="windowBg">@color/material_light_o</item>
+        <item name="themeText">@color/material_dark</item>
+        <item name="cardBg">@color/material_light</item>
+        <item name="info">@drawable/ic_information_black</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowShowWallpaper">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">#00000000</item>
+        <item name="android:navigationBarColor">#00000000</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="Base.Theme" parent="BaseLauncherTheme">
+        <item name="colorAccent">@color/accent</item>
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+    </style>
+
+    <!-- Theme colors -->
+    <style name="Base.Theme.Red" parent="BaseLauncherTheme">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_red_400</item>
+    </style>
+
+    <style name="Base.Theme.Pink" parent="BaseLauncherTheme">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_pink_400</item>
+    </style>
+
+    <style name="Base.Theme.Purple" parent="BaseLauncherTheme">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_purple_400</item>
+    </style>
+
+    <style name="Base.Theme.DeepPurple" parent="BaseLauncherTheme">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_deepPurple_400</item>
+    </style>
+
+    <style name="Base.Theme.Indigo" parent="BaseLauncherTheme">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_indigo_400</item>
+    </style>
+
+    <style name="Base.Theme.Blue" parent="BaseLauncherTheme">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_blue_400</item>
+    </style>
+
+    <style name="Base.Theme.LightBlue" parent="BaseLauncherTheme">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_lightBlue_400</item>
+    </style>
+
+    <style name="Base.Theme.Cyan" parent="BaseLauncherTheme">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_cyan_400</item>
+    </style>
+
+    <style name="Base.Theme.Teal" parent="BaseLauncherTheme">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_teal_400</item>
+    </style>
+
+    <style name="Base.Theme.Green" parent="BaseLauncherTheme">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_green_400</item>
+    </style>
+
+    <style name="Base.Theme.Amber" parent="BaseLauncherTheme">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_amber_400</item>
+    </style>
+
+    <style name="Base.Theme.Orange" parent="BaseLauncherTheme">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_orange_400</item>
+    </style>
+
+    <style name="Base.Theme.DeepOrange" parent="BaseLauncherTheme">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_deepOrange_400</item>
+    </style>
+
+    <style name="Base.Theme.Brown" parent="BaseLauncherTheme">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_brown_400</item>
+    </style>
+
+    <style name="Base.Theme.BlueGrey" parent="BaseLauncherTheme">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_blueGrey_400</item>
+    </style>
+
+    <!-- Dark Theme -->
+    <style name="BaseLauncherThemeDark" parent="@style/Theme.AppCompat.NoActionBar">
+        <item name="windowBg">@color/material_dark</item>
+        <item name="cardBg">@color/material_dark_default</item>
+        <item name="themeText">@color/material_light</item>
+        <item name="info">@drawable/ic_information_white</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowShowWallpaper">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">#00000000</item>
+        <item name="android:navigationBarColor">#00000000</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="Base.Theme.Dark" parent="BaseLauncherThemeDark">
+        <item name="colorAccent">@color/accent</item>
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+    </style>
+
+    <!-- Theme colors -->
+    <style name="Base.Theme.Red.Dark" parent="BaseLauncherThemeDark">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_red_400</item>
+    </style>
+
+    <style name="Base.Theme.Pink.Dark" parent="BaseLauncherThemeDark">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_pink_400</item>
+    </style>
+
+    <style name="Base.Theme.Purple.Dark" parent="BaseLauncherThemeDark">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_purple_400</item>
+    </style>
+
+    <style name="Base.Theme.DeepPurple.Dark" parent="BaseLauncherThemeDark">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_deepPurple_400</item>
+    </style>
+
+    <style name="Base.Theme.Indigo.Dark" parent="BaseLauncherThemeDark">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_indigo_400</item>
+    </style>
+
+    <style name="Base.Theme.Blue.Dark" parent="BaseLauncherThemeDark">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_blue_400</item>
+    </style>
+
+    <style name="Base.Theme.LightBlue.Dark" parent="BaseLauncherThemeDark">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_lightBlue_400</item>
+    </style>
+
+    <style name="Base.Theme.Cyan.Dark" parent="BaseLauncherThemeDark">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_cyan_400</item>
+    </style>
+
+    <style name="Base.Theme.Teal.Dark" parent="BaseLauncherThemeDark">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_teal_400</item>
+    </style>
+
+    <style name="Base.Theme.Green.Dark" parent="BaseLauncherThemeDark">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_green_400</item>
+    </style>
+
+    <style name="Base.Theme.Amber.Dark" parent="BaseLauncherThemeDark">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_amber_400</item>
+    </style>
+
+    <style name="Base.Theme.Orange.Dark" parent="BaseLauncherThemeDark">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_orange_400</item>
+    </style>
+
+    <style name="Base.Theme.DeepOrange.Dark" parent="BaseLauncherThemeDark">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_deepOrange_400</item>
+    </style>
+
+    <style name="Base.Theme.Brown.Dark" parent="BaseLauncherThemeDark">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_brown_400</item>
+    </style>
+
+    <style name="Base.Theme.BlueGrey.Dark" parent="BaseLauncherThemeDark">
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">@color/material_blueGrey_400</item>
+    </style>
+
+    <style name="Theme" parent="BaseLauncherTheme" />
+
+    <!-- Theme for the widget container. Overridden on API 25. -->
+    <style name="WidgetContainerTheme" parent="@android:style/Theme.DeviceDefault.Settings">
+        <item name="colorSecondary">@color/fallback_secondary_color</item>
+    </style>
+
+    <!-- Overscroll effect -->
+    <style name="CustomOverscroll" />
+
+    <style name="CustomOverscroll.Light" parent="@android:style/Theme.DeviceDefault.Light">
+        <item name="android:colorEdgeEffect">?attr/colorAccent</item>
+        <item name="android:colorAccent">?attr/colorAccent</item>
+    </style>
+
+    <style name="CustomOverscroll.Dark" parent="@android:style/Theme.DeviceDefault">
+        <item name="android:colorEdgeEffect">?attr/colorAccent</item>
+        <item name="android:colorAccent">?attr/colorAccent</item>
+    </style>
+
+    <!-- Different icons -->
+    <style name="Icon">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:textColor">@color/workspace_icon_text_color</item>
+        <item name="android:shadowRadius">2.0</item>
+        <item name="android:shadowColor">#B0000000</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+
+    <style name="Icon.AllApps">
+        <item name="android:background">@null</item>
+        <item name="android:textColor">?attr/themeText</item>
+        <item name="android:drawablePadding">@dimen/dynamic_grid_icon_drawable_padding</item>
+        <item name="android:shadowRadius">0</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:paddingRight">4dp</item>
+        <item name="customShadows">false</item>
+    </style>
+
+    <style name="Icon.Folder">
+        <item name="android:background">?attr/windowBg</item>
+        <item name="android:textColor">?attr/themeText</item>
+        <item name="android:shadowRadius">0</item>
+        <item name="android:textSize">@dimen/folder_child_text_size</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="customShadows">false</item>
+        <item name="iconDisplay">folder</item>
+    </style>
+
+    <style name="Icon.DeepShortcut">
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:elevation">@dimen/deep_shortcuts_elevation</item>
+        <item name="android:paddingStart">@dimen/bg_pill_height</item>
+        <item name="android:paddingEnd">@dimen/deep_shortcut_padding_end</item>
+        <item name="android:drawableEnd">@drawable/deep_shortcuts_drag_handle</item>
+        <item name="android:drawablePadding">@dimen/deep_shortcut_drawable_padding</item>
+        <item name="android:textColor">?attr/themeText</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:shadowRadius">0</item>
+        <item name="customShadows">false</item>
+        <item name="layoutHorizontal">true</item>
+        <item name="iconSizeOverride">@dimen/deep_shortcut_icon_size</item>
+    </style>
+
+    <!-- Drop targets -->
+    <style name="DropTargetButtonBase">
+        <item name="android:drawablePadding">7.5dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+    </style>
+
+    <style name="DropTargetButton" parent="DropTargetButtonBase" />
+
+    <!-- Virtual preloaders -->
+    <style name="PreloadIcon">
+        <item name="background">@drawable/virtual_preload</item>
+        <item name="indicatorSize">4dp</item>
+        <item name="ringOutset">4dp</item>
+    </style>
+
+    <style name="PreloadIcon.Folder">
+        <item name="background">@drawable/virtual_preload_folder</item>
+        <item name="indicatorSize">4dp</item>
+        <item name="ringOutset">4dp</item>
+    </style>
+
+    <!-- Folder edit text cursor color -->
+    <style name="FolderEditText">
+        <item name="android:colorControlActivated">?attr/themeText</item>
+    </style>
+</resources>

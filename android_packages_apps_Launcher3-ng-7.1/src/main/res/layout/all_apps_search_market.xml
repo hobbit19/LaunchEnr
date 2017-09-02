@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/search_market_text"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="?android:selectableItemBackground"
+    android:focusable="true"
+    android:fontFamily="sans-serif-medium"
+    android:gravity="center"
+    android:paddingLeft="@dimen/container_fastscroll_thumb_max_width"
+    android:paddingRight="@dimen/container_fastscroll_thumb_max_width"
+    android:text="@string/all_apps_search_market_message"
+    android:textAllCaps="true"
+    android:textColor="?attr/colorAccent"
+    android:textSize="14sp" />

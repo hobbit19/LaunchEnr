@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.enrico.launcher3.folder.Folder xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:launcher="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/quantum_panel"
+    android:elevation="5dp"
+    android:orientation="vertical">
+
+    <com.enrico.launcher3.folder.FolderPagedView
+        android:id="@+id/folder_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="6dp"
+        launcher:pageIndicator="@+id/folder_page_indicator" />
+
+    <LinearLayout
+        android:id="@+id/folder_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:orientation="horizontal"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp">
+
+        <com.enrico.launcher3.ExtendedEditText
+            android:id="@+id/folder_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center_horizontal|center_vertical"
+            android:hint="@string/folder_hint_text"
+            android:imeOptions="flagNoExtractUi"
+            android:maxLines="1"
+            android:paddingBottom="@dimen/folder_label_padding_bottom"
+            android:paddingTop="@dimen/folder_label_padding_top"
+            android:textColorHighlight="@color/material_highlight_grey_600"
+            android:textColorHint="@color/material_highlight_grey_600"
+            android:textSize="@dimen/folder_label_text_size"
+            android:textStyle="bold"
+            android:theme="@style/FolderEditText" />
+
+        <com.enrico.launcher3.pageindicators.PageIndicatorDots
+            android:id="@+id/folder_page_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:elevation="1dp" />
+
+    </LinearLayout>
+
+</com.enrico.launcher3.folder.Folder>
