@@ -27,7 +27,7 @@
     <string name="default_round">Default round</string>
     <string name="enr_round">Colorful round</string>
     <string name="icon_style">Icons style</string>
-    <string name="search_icons_hint">&#8230;or search another one</string>
+    <string name="search_icons_hint">Search icon</string>
 
     <!-- Hidden apps -->
     <string name="hide">Hide</string>
