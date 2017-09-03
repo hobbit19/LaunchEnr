@@ -26,7 +26,7 @@ lightened Aosp launcher code and substitution of deprecated methods;
 ![ScreenShot](https://raw.githubusercontent.com/enricocid/LaunchEnr/master/art.png)
 
 
-You can download the latest (1.3) signed APK from this repo here: https://github.com/enricocid/LaunchEnr/raw/master/android_packages_apps_Launcher3-ng-7.1/android_packages_apps_Launcher3-ng-7.1-release.apk
+You can download the latest (1.3.1) signed APK from this repo here: https://github.com/enricocid/LaunchEnr/raw/master/android_packages_apps_Launcher3-ng-7.1/android_packages_apps_Launcher3-ng-7.1-release.apk
 
 
 The app is available on:
