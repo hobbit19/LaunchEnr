@@ -2,11 +2,13 @@ package com.enrico.launcher3.icons;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
-import android.app.Activity;
+import android.content.Context;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.graphics.ColorUtils;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ContextThemeWrapper;
 import android.support.v7.widget.GridLayoutManager;
@@ -14,9 +16,12 @@ import android.support.v7.widget.GridLayoutManager.SpanSizeLookup;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,6 +30,7 @@ import com.enrico.launcher3.ItemInfo;
 import com.enrico.launcher3.LauncherAppState;
 import com.enrico.launcher3.R;
 import com.enrico.launcher3.Utilities;
+import com.enrico.launcher3.graphics.TintedDrawableSpan;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,10 +50,33 @@ public class ChooseIconActivity extends AppCompatActivity {
 
     private EditText editTextSearch;
     private List<String> allIcons, matchingIcons;
-    private boolean mNoMatchingDrawables;
 
     public static void setItemInfo(ItemInfo info) {
         sItemInfo = info;
+    }
+
+    private void tintWidget(View view, int color) {
+        Drawable wrappedDrawable = DrawableCompat.wrap(view.getBackground());
+        DrawableCompat.setTint(wrappedDrawable.mutate(), color);
+        view.setBackground(wrappedDrawable);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (editTextSearch.hasFocus()) {
+
+            //hide soft keyboard
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            if (getCurrentFocus() != null) {
+                imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+            }
+
+            //clear focus
+            editTextSearch.clearComposingText();
+            editTextSearch.clearFocus();
+        } else {
+            finish();
+        }
     }
 
     @Override
@@ -73,11 +102,10 @@ public class ChooseIconActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        //go back
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                onBackPressed();
             }
         });
 
@@ -100,6 +128,20 @@ public class ChooseIconActivity extends AppCompatActivity {
         mIconsGrid.setAlpha(0.0f);
         toolbar.setAlpha(0.0f);
         editTextSearch.setAlpha(0.0f);
+
+        final int accent = Utilities.getColorAccent(this);
+        final int opaqueAccent = ColorUtils.setAlphaComponent(accent, 100);
+        tintWidget(editTextSearch, opaqueAccent);
+
+        // Update the hint to contain the icon.
+        // Prefix the original hint with two spaces. The first space gets replaced by the icon
+        // using span. The second space is used for a singe space character between the hint
+        // and the icon.
+        SpannableString spanned = new SpannableString("  " + editTextSearch.getHint());
+        spanned.setSpan(new TintedDrawableSpan(this, R.drawable.ic_allapps_search),
+                0, 1, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+        editTextSearch.setHint(spanned);
+
         final View appIcon = findViewById(R.id.app_icon);
 
         final Animator anim = AnimatorInflater
@@ -135,12 +177,22 @@ public class ChooseIconActivity extends AppCompatActivity {
 
                             @Override
                             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                                filter(charSequence.toString());
+
                             }
 
                             @Override
                             public void afterTextChanged(Editable editable) {
 
+                                String mQuery = editable.toString();
+                                IconsSearchUtils.filter(mQuery, matchingIcons, allIcons, mGridAdapter);
+                            }
+                        });
+
+                        editTextSearch.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                            @Override
+                            public void onFocusChange(View view, boolean hasFocus) {
+
+                                if (hasFocus) tintWidget(editTextSearch, accent);
                             }
                         });
                     }
@@ -149,81 +201,15 @@ public class ChooseIconActivity extends AppCompatActivity {
         }).start();
     }
 
-    private void filter(String text) {
-
-        String query = text.toLowerCase().trim();
-
-        //new array list that will hold the filtered data
-        ArrayList<String> filterdNames = new ArrayList<>();
-        ArrayList<String> filterdshit = new ArrayList<>();
-
-        mNoMatchingDrawables = matchingIcons.isEmpty();
-
-        if (query.isEmpty()) {
-
-            filterdNames.clear();
-            filterdNames.add(null);
-            filterdNames.addAll(allIcons);
-
-            filterdshit.clear();
-
-            if (!mNoMatchingDrawables) {
-                filterdshit.add(null);
-                filterdshit.addAll(matchingIcons);
-            }
-
-            mGridAdapter.filterList(filterdNames, filterdshit);
-
-        } else {
-
-            filterdNames.clear();
-            filterdshit.clear();
-
-            if (mNoMatchingDrawables) {
-                //looping through existing elements
-                for (String s : allIcons) {
-                    //if the existing elements contains the search input
-                    if (s.toLowerCase().trim().contains(query)) {
-                        //adding the element to filtered list
-                        filterdNames.add(s);
-                    }
-                }
-            } else {
-
-                filterdNames.clear();
-                filterdshit.clear();
-
-                //looping through existing elements
-                for (String s : allIcons) {
-                    //if the existing elements contains the search input
-                    if (s.toLowerCase().trim().contains(query)) {
-                        //adding the element to filtered list
-                        filterdNames.add(s);
-                    }
-                }
-
-                for (String s : matchingIcons) {
-                    //if the existing elements contains the search input
-                    if (s.toLowerCase().trim().contains(query)) {
-                        //adding the element to filtered list
-                        filterdshit.add(s);
-                    }
-                }
-            }
-            //calling a method of the adapter class and passing the filtered list
-            mGridAdapter.filterList(filterdNames, filterdshit);
-        }
-    }
-
-    private class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
+    class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
         private static final int TYPE_MATCHING_HEADER = 0;
         private static final int TYPE_MATCHING_ICONS = 1;
         private static final int TYPE_ALL_HEADER = 2;
         private static final int TYPE_ALL_ICONS = 3;
-
         List<String> mAllDrawables = new ArrayList<>();
         List<String> mMatchingDrawables = new ArrayList<>();
+        private boolean mNoMatchingDrawables;
         private final SpanSizeLookup mSpanSizeLookup = new SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {
@@ -248,7 +234,7 @@ public class ChooseIconActivity extends AppCompatActivity {
             }
         }
 
-        private void filterList(List<String> filteredAllDrawables, List<String> filteredMatchingDrawables) {
+        void filterList(List<String> filteredAllDrawables, List<String> filteredMatchingDrawables) {
 
             mAllDrawables = filteredAllDrawables;
             mMatchingDrawables = filteredMatchingDrawables;
@@ -282,21 +268,21 @@ public class ChooseIconActivity extends AppCompatActivity {
 
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            Activity activity = ChooseIconActivity.this;
+
             if (viewType == TYPE_MATCHING_HEADER) {
-                TextView text = (TextView) activity.getLayoutInflater().inflate(
+                TextView text = (TextView) getLayoutInflater().inflate(
                         R.layout.all_icons_view_header, nullParent);
                 text.setText(R.string.similar_icons);
                 return new ViewHolder(text);
             }
             if (viewType == TYPE_ALL_HEADER) {
-                TextView text = (TextView) activity.getLayoutInflater().inflate(
+                TextView text = (TextView) getLayoutInflater().inflate(
                         R.layout.all_icons_view_header, nullParent);
                 text.setText(R.string.all_icons);
                 return new ViewHolder(text);
             }
 
-            return new ViewHolder(activity.getLayoutInflater().inflate(R.layout.icon_item, nullParent));
+            return new ViewHolder(getLayoutInflater().inflate(R.layout.icon_item, nullParent));
         }
 
         @Override
