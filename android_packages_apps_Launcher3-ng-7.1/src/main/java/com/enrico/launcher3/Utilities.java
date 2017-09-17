@@ -73,8 +73,8 @@ public final class Utilities {
     public static final String CHOOSE_THEME_KEY = "pref_chooseTheme";
     public static final String LIGHT_BARS_KEY = "pref_lightBarS";
 
-    public static final String HIDDEN_APPS_SET_KEY = "pref_hiddenAppsSetKey";
-    public static final String RESTORE_HIDDEN_APPS = "pref_restoreHiddenApps";
+    public static final String KEY_HIDDEN_APPS = "hidden-app";
+    static final String KEY_HIDDEN_APPS_SET = "hidden-app-set";
     public static final String PINCH_OVERVIEW_KEY = "pref_pinchToOverview";
     public static final String HOTSEAT_KEY = "pref_hotseatColor";
     public static final String COLOR_FOLDERS_KEY = "pref_coloredFolders";

@@ -9,6 +9,7 @@
         <item name="themeText">@color/material_dark</item>
         <item name="cardBg">@color/material_light</item>
         <item name="info">@drawable/ic_information_black</item>
+        <item name="check">@drawable/ic_check_circle</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
         <item name="android:windowShowWallpaper">true</item>
         <item name="android:windowNoTitle">true</item>
@@ -107,6 +108,7 @@
         <item name="cardBg">@color/material_dark_default</item>
         <item name="themeText">@color/material_light</item>
         <item name="info">@drawable/ic_information_white</item>
+        <item name="check">@drawable/ic_check_circle_white</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
         <item name="android:windowShowWallpaper">true</item>

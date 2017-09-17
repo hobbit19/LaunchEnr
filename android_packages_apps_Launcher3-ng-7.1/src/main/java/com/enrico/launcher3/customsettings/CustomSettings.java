@@ -57,10 +57,6 @@ public class CustomSettings implements SharedPreferences.OnSharedPreferenceChang
                 Launcher.mustRecreate();
                 break;
 
-            case Utilities.RESTORE_HIDDEN_APPS:
-                reloadAll();
-                break;
-
             case IconUtils.BADGE_POSITION_KEY:
                 reloadAll();
                 break;

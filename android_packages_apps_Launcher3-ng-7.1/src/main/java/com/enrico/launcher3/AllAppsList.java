@@ -44,11 +44,14 @@ class AllAppsList {
 
     private AppFilter mAppFilter;
 
+    private Context mContext;
+
     /**
      * Boring constructor.
      */
 
     AllAppsList(Context context, IconCache iconCache, AppFilter appFilter) {
+        mContext = context;
         mIconCache = iconCache;
         mAppFilter = appFilter;
     }
@@ -97,8 +100,8 @@ class AllAppsList {
      * <p>
      * If the app is already in the list, doesn't add it.
      */
-    public void add(AppInfo info, Context context) {
-        if (mAppFilter != null && !mAppFilter.shouldShowApp(info.componentName, context)) {
+    public void add(AppInfo info) {
+        if (mAppFilter != null && !mAppFilter.shouldShowApp(info.componentName.getPackageName(), mContext)) {
             return;
         }
         if (findActivity(data, info.componentName, info.user)) {
@@ -133,7 +136,7 @@ class AllAppsList {
                 user);
 
         for (LauncherActivityInfoCompat info : matches) {
-            add(new AppInfo(context, info, user, mIconCache), context);
+            add(new AppInfo(context, info, user, mIconCache));
         }
     }
 
@@ -207,7 +210,7 @@ class AllAppsList {
                         info.getComponentName().getPackageName(), user,
                         info.getComponentName().getClassName());
                 if (applicationInfo == null) {
-                    add(new AppInfo(context, info, user, mIconCache), context);
+                    add(new AppInfo(context, info, user, mIconCache));
                 } else {
                     mIconCache.getTitleAndIcon(applicationInfo, info, true /* useLowResIcon */);
                     modified.add(applicationInfo);

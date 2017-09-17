@@ -3887,7 +3887,7 @@ public class Workspace extends PagedView
      * as a part of an update, this is called to ensure that other widgets and application
      * shortcuts are not removed.
      */
-    public void removeItemsByMatcher(final ItemInfoMatcher matcher, final boolean deleteFromDb) {
+    public void removeItemsByMatcher(final ItemInfoMatcher matcher) {
         ArrayList<CellLayout> cellLayouts = getWorkspaceAndHotseatCellLayouts();
         for (final CellLayout layoutParent: cellLayouts) {
             final ViewGroup layout = layoutParent.getShortcutsAndWidgets();
@@ -3903,7 +3903,7 @@ public class Workspace extends PagedView
             LauncherModel.ItemInfoFilter filter = new LauncherModel.ItemInfoFilter() {
                 @Override
                 public boolean filterItem(ItemInfo parent, ItemInfo info,
-                        ComponentName cn) {
+                                          ComponentName cn) {
                     if (parent instanceof FolderInfo) {
                         if (matcher.matches(info, cn)) {
                             FolderInfo folder = (FolderInfo) parent;
@@ -3911,27 +3911,21 @@ public class Workspace extends PagedView
                             if (folderAppsToRemove.containsKey(folder)) {
                                 appsToRemove = folderAppsToRemove.get(folder);
                             } else {
-                                appsToRemove = new ArrayList<>();
+                                appsToRemove = new ArrayList<ShortcutInfo>();
                                 folderAppsToRemove.put(folder, appsToRemove);
                             }
                             appsToRemove.add((ShortcutInfo) info);
-
                             return true;
                         }
                     } else {
                         if (matcher.matches(info, cn)) {
                             childrenToRemove.add(children.get(info));
-
-                            if (deleteFromDb) {
-                                mLauncher.removeItem(null, info, true);
-                            }
                             return true;
                         }
                     }
                     return false;
                 }
             };
-
             LauncherModel.filterItemInfos(children.keySet(), filter);
 
             // Remove all the apps from their folders
@@ -3939,9 +3933,6 @@ public class Workspace extends PagedView
                 ArrayList<ShortcutInfo> appsToRemove = folderAppsToRemove.get(folder);
                 for (ShortcutInfo info : appsToRemove) {
                     folder.remove(info, false);
-                    if (deleteFromDb) {
-                        mLauncher.removeItem(null, info, true);
-                    }
                 }
             }
 
@@ -4059,7 +4050,7 @@ public class Workspace extends PagedView
         HashSet<String> packages = new HashSet<>(1);
         packages.add(packageName);
         LauncherModel.deletePackageFromDatabase(mLauncher, packageName, user);
-        removeItemsByMatcher(ItemInfoMatcher.ofPackages(packages, user), false);
+        removeItemsByMatcher(ItemInfoMatcher.ofPackages(packages, user));
     }
 
     public void updateRestoreItems(final HashSet<ItemInfo> updates) {

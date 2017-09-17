@@ -15,16 +15,6 @@ import java.util.HashSet;
  */
 public abstract class ItemInfoMatcher {
 
-    public static ItemInfoMatcher ofComponent(final ComponentName componentName) {
-        return new ItemInfoMatcher() {
-            @Override
-            public boolean matches(ItemInfo info, ComponentName cn) {
-
-                return componentName.equals(cn);
-            }
-        };
-    }
-
     public static ItemInfoMatcher ofComponents(
             final HashSet<ComponentName> components, final UserHandle user) {
         return new ItemInfoMatcher() {

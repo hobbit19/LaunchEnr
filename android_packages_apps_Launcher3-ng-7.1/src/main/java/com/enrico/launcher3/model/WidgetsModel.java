@@ -144,7 +144,7 @@ public class WidgetsModel {
                 }
             }
 
-            if (mAppFilter != null && !mAppFilter.shouldShowApp(item.componentName, context)) {
+            if (mAppFilter != null && !mAppFilter.shouldShowApp(item.componentName.getPackageName(), context)) {
 
                 continue;
             }

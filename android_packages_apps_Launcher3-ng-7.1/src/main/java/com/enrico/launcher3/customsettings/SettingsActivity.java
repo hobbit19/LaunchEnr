@@ -1,10 +1,8 @@
 package com.enrico.launcher3.customsettings;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
 import android.preference.EditTextPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -20,12 +18,11 @@ import android.view.View;
 
 import com.enrico.launcher3.BoardTitleUtils;
 import com.enrico.launcher3.LauncherFiles;
+import com.enrico.launcher3.MultiSelectRecyclerViewActivity;
 import com.enrico.launcher3.R;
 import com.enrico.launcher3.Utilities;
 import com.enrico.launcher3.about.AboutDialog;
 import com.enrico.launcher3.authorizations.PermissionUtils;
-import com.enrico.launcher3.hiddenapps.HiddenAppsDialog;
-import com.enrico.launcher3.hiddenapps.HiddenAppsUtils;
 import com.enrico.launcher3.icons.IconUtils;
 import com.enrico.launcher3.icons.IconsHandler;
 import com.enrico.launcher3.icons.RandomIconsTile;
@@ -33,11 +30,7 @@ import com.enrico.launcher3.notifications.NotificationUtils;
 import com.enrico.launcher3.notifications.NotificationsDotListener;
 import com.enrico.launcher3.simplegestures.GesturesUtils;
 
-import java.util.Set;
-
-public class SettingsActivity extends AppCompatActivity implements HiddenAppsDialog.HiddenAppsListener {
-
-    ContextThemeWrapper contextThemeWrapper;
+public class SettingsActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -64,7 +57,7 @@ public class SettingsActivity extends AppCompatActivity implements HiddenAppsDia
         super.onCreate(savedInstanceState);
 
         //apply activity's theme if dark theme is enabled
-        contextThemeWrapper = new ContextThemeWrapper(getBaseContext(), this.getTheme());
+        ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(getBaseContext(), this.getTheme());
 
         Utilities.applyTheme(contextThemeWrapper, this);
 
@@ -97,56 +90,14 @@ public class SettingsActivity extends AppCompatActivity implements HiddenAppsDia
                 .commit();
     }
 
-    @Override
-    public void onHiddenAppsEdit() {
-
-        LauncherSettingsFragment.updateHiddenAppsPreference(this);
-    }
-
     /**
      * This fragment shows the launcher preferences.
      */
     public static class LauncherSettingsFragment extends PreferenceFragment {
 
-        private static CheckBoxPreference restoreHiddenApps;
-
         private static PreferenceScreen launcherSettings;
         Intent notificationService;
         private SharedPreferences.OnSharedPreferenceChangeListener mListenerOptions;
-
-        //manage hidden apps preference
-        private static void manageHiddenAppsPreference(Activity activity, CheckBoxPreference restoreHiddenApps) {
-
-            //set this preference disabled if no app is hidden
-            restoreHiddenApps.setEnabled(false);
-            restoreHiddenApps.setTitle(activity.getString(R.string.noHiddenApps));
-            restoreHiddenApps.setSummary(null);
-            restoreHiddenApps.setChecked(false);
-        }
-
-        //update the number of the hidden apps
-        private static void updateHiddenAppsPreference(Activity activity) {
-
-            Set<String> hiddenApps = HiddenAppsUtils.hiddenComponents(activity);
-
-            if (hiddenApps != null) {
-
-                if (hiddenApps.size() != 0) {
-
-                    restoreHiddenApps.setEnabled(true);
-                    restoreHiddenApps.setTitle(activity.getString(R.string.hiddenApps) + String.valueOf(hiddenApps.size()));
-                    restoreHiddenApps.setSummary(activity.getString(R.string.hiddenAppsSum));
-
-                } else {
-
-                    manageHiddenAppsPreference(activity, restoreHiddenApps);
-                }
-
-            } else {
-
-                manageHiddenAppsPreference(activity, restoreHiddenApps);
-            }
-        }
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -172,21 +123,18 @@ public class SettingsActivity extends AppCompatActivity implements HiddenAppsDia
                 lightStatusBar.setSummary(getActivity().getString(R.string.light_bars_sum));
             }
 
-            restoreHiddenApps = (CheckBoxPreference) findPreference(Utilities.RESTORE_HIDDEN_APPS);
-            restoreHiddenApps.setWidgetLayoutResource(0);
+            Preference hideAppPreference = findPreference(Utilities.KEY_HIDDEN_APPS);
 
-            //open hidden apps dialog to manage hidden apps
-            restoreHiddenApps.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            //open hidden app activity
+            hideAppPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
 
-                    HiddenAppsDialog.show(getActivity());
+                    Intent intent = new Intent(getActivity(), MultiSelectRecyclerViewActivity.class);
+                    startActivity(intent);
                     return false;
                 }
             });
-
-            //always update this preference on create the fragment
-            updateHiddenAppsPreference(getActivity());
 
             final Preference badgePosition = findPreference(IconUtils.BADGE_POSITION_KEY);
             final Preference badgeShadow = findPreference(IconUtils.BADGE_SHADOW_KEY);

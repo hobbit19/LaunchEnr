@@ -9,7 +9,7 @@ import android.text.TextUtils;
 
 import com.enrico.launcher3.LauncherAppState;
 import com.enrico.launcher3.Utilities;
-import com.enrico.launcher3.hiddenapps.HiddenAppsUtils;
+import com.enrico.launcher3.HiddenAppUtils;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -114,7 +114,7 @@ public class NotificationsDotListener extends NotificationListenerService {
     @Override
     public void onNotificationPosted(StatusBarNotification sbn) {
 
-        if (NotificationUtils.isNotificationServiceEnabled(getBaseContext()) && !shouldBeFilteredOut(sbn) && !HiddenAppsUtils.isPackageHidden(getBaseContext(), sbn.getPackageName())) {
+        if (NotificationUtils.isNotificationServiceEnabled(getBaseContext()) && !shouldBeFilteredOut(sbn) && !HiddenAppUtils.isPackageHidden(getBaseContext(), sbn.getPackageName())) {
 
             updateNotificationStatus(sbn);
         }
@@ -123,7 +123,7 @@ public class NotificationsDotListener extends NotificationListenerService {
     @Override
     public void onNotificationRemoved(StatusBarNotification sbn) {
 
-        if (NotificationUtils.isNotificationServiceEnabled(getBaseContext()) && !shouldBeFilteredOut(sbn) && !HiddenAppsUtils.isPackageHidden(getBaseContext(), sbn.getPackageName())) {
+        if (NotificationUtils.isNotificationServiceEnabled(getBaseContext()) && !shouldBeFilteredOut(sbn) && !HiddenAppUtils.isPackageHidden(getBaseContext(), sbn.getPackageName())) {
 
             removeNotificationStatus(sbn);
         }

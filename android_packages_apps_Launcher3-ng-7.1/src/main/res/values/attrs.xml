@@ -99,5 +99,6 @@
     <attr name="themeText" format="color" />
     <attr name="cardBg" format="color" />
     <attr name="info" format="reference" />
+    <attr name="check" format="reference" />
 
 </resources>

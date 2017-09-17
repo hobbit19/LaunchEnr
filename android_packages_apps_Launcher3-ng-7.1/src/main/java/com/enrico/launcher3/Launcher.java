@@ -103,7 +103,6 @@ import com.enrico.launcher3.dynamicui.ExtractedColors;
 import com.enrico.launcher3.folder.Folder;
 import com.enrico.launcher3.folder.FolderIcon;
 import com.enrico.launcher3.frequentcontacts.AsyncLoadContacts;
-import com.enrico.launcher3.hiddenapps.HiddenAppsUtils;
 import com.enrico.launcher3.icons.ChooseIconActivity;
 import com.enrico.launcher3.icons.IconCache;
 import com.enrico.launcher3.icons.IconUtils;
@@ -2391,9 +2390,7 @@ public class Launcher extends Activity
             if (deleteFromDb) {
                 deleteWidgetInfo(widgetInfo);
             }
-        }
-
-        else {
+        } else {
             return false;
         }
         return true;
@@ -4236,13 +4233,13 @@ public class Launcher extends Activity
 
             if (!removedComponents.isEmpty()) {
                 ItemInfoMatcher matcher = ItemInfoMatcher.ofComponents(removedComponents, user);
-                mWorkspace.removeItemsByMatcher(matcher, false);
+                mWorkspace.removeItemsByMatcher(matcher);
                 mDragController.onAppsRemoved(matcher);
             }
 
             if (!removedDeepShortcuts.isEmpty()) {
                 ItemInfoMatcher matcher = ItemInfoMatcher.ofShortcutKeys(removedDeepShortcuts);
-                mWorkspace.removeItemsByMatcher(matcher, false);
+                mWorkspace.removeItemsByMatcher(matcher);
                 mDragController.onAppsRemoved(matcher);
             }
         }
@@ -4288,13 +4285,13 @@ public class Launcher extends Activity
         }
         if (!packageNames.isEmpty()) {
             ItemInfoMatcher matcher = ItemInfoMatcher.ofPackages(packageNames, user);
-            mWorkspace.removeItemsByMatcher(matcher, false);
+            mWorkspace.removeItemsByMatcher(matcher);
             mDragController.onAppsRemoved(matcher);
 
         }
         if (!components.isEmpty()) {
             ItemInfoMatcher matcher = ItemInfoMatcher.ofComponents(components, user);
-            mWorkspace.removeItemsByMatcher(matcher, false);
+            mWorkspace.removeItemsByMatcher(matcher);
             mDragController.onAppsRemoved(matcher);
         }
     }
@@ -4428,14 +4425,6 @@ public class Launcher extends Activity
                                 mIconPackDialog.dismiss();
                             }
                         })
-
-                .setNegativeButton(R.string.hide, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        HiddenAppsUtils.addToHideList(Launcher.this, info);
-                        mIconPackDialog.dismiss();
-                    }
-                })
 
                 .setPositiveButton(android.R.string.ok,
                         new DialogInterface.OnClickListener() {

@@ -129,10 +129,6 @@
     <string name="noteTitle">Qui il titolo&#8230;</string>
     <string name="noteBody">Qua il corpo&#8230;</string>
     <string name="notePriority">Priorità</string>
-    <string name="restoreHiddenAppsPref">Ripristina app nascoste</string>
-    <string name="hiddenApps">App nascoste:&#160;</string>
-    <string name="hiddenAppsSum">Clicca per ripristinare le app nascoste</string>
-    <string name="noHiddenApps">Alcuna app risulta nascosta</string>
     <string name="pinch">Pinch per panoramica</string>
     <string name="ui">Aspetto UI</string>
     <string name="others">Altra roba</string>
@@ -177,8 +173,6 @@
     <string name="doSomething">Cosa fare?</string>
     <string name="copied">Nota copiata negli appunti</string>
     <string name="boardTitle">Cambia titolo board</string>
-    <string name="hidden_title">App nascoste</string>
-    <string name="hidden_message">Seleziona le app che vuoi rendere di nuovo visibili. Clicca OK per confermare</string>
     <string name="problem">Ancora non ho i permessi. Per favore muovi l\'app nella memoria interna!</string>
     <string name="problemNumbers">Nessun numero trovato&#8230;</string>
     <string name="round_icons">Icone tonde</string>
@@ -188,11 +182,16 @@
     <string name="similar_icons">Icone simili</string>
     <string name="icon_label">Etichetta</string>
     <string name="loading">Caricamento icone&#8230;</string>
-    <string name="hide">Nascondi</string>
     <string name="default_round">Tonde di default</string>
     <string name="enr_round">Tonde colorate</string>
     <string name="none">Nessuno</string>
     <string name="icon_style">Stile icone</string>
     <string name="icon_chooser">Scelta icona</string>
     <string name="icon_search">Cerca icone</string>
+    <string name="hide_app">Nascondi app</string>
+    <string name="hide_app_sum">Nascondi app dall\'app drawer</string>
+    <string name="hide_app_selected">&#160;selezionate</string>
+    <string name="hidden_app">App nascoste</string>
+    <string name="hide_selected">Nascondi app selezionate</string>
+    <string name="more">Altro</string>
 </resources>
