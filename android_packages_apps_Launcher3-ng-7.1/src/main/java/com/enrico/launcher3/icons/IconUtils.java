@@ -133,8 +133,8 @@ public class IconUtils {
             default:
             case 20:
 
-                cx = width - radius*2;
-                cy = radius*2;
+                cx = width - radius * 2;
+                cy = radius * 2;
 
                 if (isBadgeShadowEnabled(context)) {
 
@@ -147,8 +147,8 @@ public class IconUtils {
             //top left
             case 21:
 
-                cx = radius*2;
-                cy = radius*2;
+                cx = radius * 2;
+                cy = radius * 2;
 
                 if (isBadgeShadowEnabled(context)) {
 
@@ -161,8 +161,8 @@ public class IconUtils {
             //bottom right
             case 22:
 
-                cx = width - radius*2;
-                cy = width - radius*2;
+                cx = width - radius * 2;
+                cy = width - radius * 2;
 
                 if (isBadgeShadowEnabled(context)) {
 
@@ -175,8 +175,8 @@ public class IconUtils {
             //bottom left
             case 23:
 
-                cx = radius*2;
-                cy = width - radius*2;
+                cx = radius * 2;
+                cy = width - radius * 2;
 
                 if (isBadgeShadowEnabled(context)) {
 
@@ -409,9 +409,8 @@ public class IconUtils {
         return srcTgt;
     }
 
-    //get normalized icon for edit icon dialog and for reset purposes
-    public static Bitmap getEditIconBitmap(Context context, IconsHandler mIconsHandler, ItemInfo info) {
-        Bitmap defaultIcon = mIconsHandler.getDrawableIconForPackage(info.getTargetComponent());
-        return createBadgedIconBitmap(new BitmapDrawable(context.getResources(), defaultIcon), info.user, context);
+    public static Bitmap getEditIconBitmap(Context context, IconCache iconCache, LauncherActivityInfoCompat app, ItemInfo info) {
+        Drawable defaultIcon = new BitmapDrawable(context.getResources(), iconCache.getNonNullIcon(info.getTargetComponent().getPackageName(), iconCache.getCacheEntry(app), info.user, false));
+        return createBadgedIconBitmap(defaultIcon, info.user, context);
     }
 }

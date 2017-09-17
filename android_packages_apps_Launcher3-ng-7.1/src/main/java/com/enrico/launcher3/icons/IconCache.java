@@ -491,7 +491,7 @@ public class IconCache {
         return new IconLoadRequest(request, mWorkerHandler);
     }
 
-    private Bitmap getNonNullIcon(String packageName, CacheEntry entry, UserHandle user, boolean notificationBadge) {
+    Bitmap getNonNullIcon(String packageName, CacheEntry entry, UserHandle user, boolean notificationBadge) {
 
         Bitmap bitmapIcon = entry.icon == null ? getDefaultIcon(user) : entry.icon;
 

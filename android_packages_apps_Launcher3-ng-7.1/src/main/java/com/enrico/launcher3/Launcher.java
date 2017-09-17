@@ -4377,7 +4377,7 @@ public class Launcher extends Activity
         mEditText.setText(mIconCache.getCacheEntry(app).title);
         mEditText.setSelection(mEditText.getText().length());
 
-        Bitmap defaultIcon =  IconUtils.getEditIconBitmap(this, mIconsHandler, info);
+        Bitmap defaultIcon =  IconUtils.getEditIconBitmap(this, mIconCache, app, info);
         final Drawable icon = new BitmapDrawable(getResources(), defaultIcon);
         mPackageIcon.setImageBitmap(defaultIcon);
 

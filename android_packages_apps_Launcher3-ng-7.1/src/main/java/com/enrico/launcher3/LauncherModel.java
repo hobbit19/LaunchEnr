@@ -22,6 +22,7 @@ import android.os.Parcelable;
 import android.os.Process;
 import android.os.SystemClock;
 import android.os.UserHandle;
+import android.preference.PreferenceManager;
 import android.provider.BaseColumns;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
@@ -1123,8 +1124,13 @@ public class LauncherModel extends BroadcastReceiver
     @Override
     public void onPackageRemoved(String packageName, UserHandle user) {
         int op = PackageUpdatedTask.OP_REMOVE;
-        enqueueItemUpdatedTask(new PackageUpdatedTask(op, new String[] { packageName },
+        enqueueItemUpdatedTask(new PackageUpdatedTask(op, new String[]{packageName},
                 user));
+        Context context = mApp.getContext();
+        //switch to default icon pack if the applied one is removed
+        if (PreferenceManager.getDefaultSharedPreferences(context).getString(IconUtils.ICON_PACK_PREFERENCE_KEY, "").equals(packageName)) {
+            IconCache.getIconsHandler(context).switchIconPacks("", context);
+        }
     }
 
     @Override
