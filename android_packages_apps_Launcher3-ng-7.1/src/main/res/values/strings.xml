@@ -22,7 +22,6 @@
     <string name="icon_label">Label</string>
     <string name="loading">Loading icons&#8230;</string>
     <string name="dots" translatable="false">&#8230;</string>
-    <string name="choose_icon">Choose an icon</string>
     <string name="none">None</string>
     <string name="default_round">Default round</string>
     <string name="enr_round">Colorful round</string>

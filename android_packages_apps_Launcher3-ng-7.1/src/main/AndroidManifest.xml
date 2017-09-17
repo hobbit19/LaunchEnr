@@ -118,7 +118,7 @@
         <activity
             android:name="com.enrico.launcher3.icons.ChooseIconActivity"
             android:autoRemoveFromRecents="true"
-            android:label="@string/choose_icon"
+            android:label="@string/icon_chooser"
             android:parentActivityName="com.enrico.launcher3.Launcher"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden"
