@@ -1,6 +1,7 @@
 package com.enrico.launcher3.icons;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -58,12 +59,12 @@ class IconsSearchUtils {
     private static void getFilteredResults(List<String> originalList, List<String> filteredResults, String query) {
 
         //looping through existing elements
-        for (String iconTitle : originalList) {
-            //if the existing elements contains the search input
-            if (iconTitle.contains(query)) {
-                //adding the element to filtered list
-                filteredResults.add(iconTitle);
-            }
+        Iterator<String> stringIterator = originalList.iterator();
+
+        //looping through existing elements
+        while (stringIterator.hasNext()) {
+            String str = stringIterator.next();
+            if (str.contains(query)) filteredResults.add(str);
         }
     }
 }

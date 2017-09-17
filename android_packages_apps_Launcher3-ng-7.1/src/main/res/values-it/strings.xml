@@ -194,5 +194,6 @@
     <string name="enr_round">Tonde colorate</string>
     <string name="none">Nessuno</string>
     <string name="icon_style">Stile icone</string>
-    <string name="search_icons_hint">Cerca icona</string>
+    <string name="icon_chooser">Scelta icona</string>
+    <string name="icon_search">Cerca icone</string>
 </resources>

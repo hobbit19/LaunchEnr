@@ -2,27 +2,23 @@ package com.enrico.launcher3.icons;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
-import android.content.Context;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.graphics.ColorUtils;
-import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ContextThemeWrapper;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.GridLayoutManager.SpanSizeLookup;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.text.Editable;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -30,7 +26,6 @@ import com.enrico.launcher3.ItemInfo;
 import com.enrico.launcher3.LauncherAppState;
 import com.enrico.launcher3.R;
 import com.enrico.launcher3.Utilities;
-import com.enrico.launcher3.graphics.TintedDrawableSpan;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,35 +43,30 @@ public class ChooseIconActivity extends AppCompatActivity {
     private IconsHandler mIconsHandler;
     private GridAdapter mGridAdapter;
 
-    private EditText editTextSearch;
     private List<String> allIcons, matchingIcons;
+
+    private int mIconSize;
 
     public static void setItemInfo(ItemInfo info) {
         sItemInfo = info;
     }
 
-    private void tintWidget(View view, int color) {
-        Drawable wrappedDrawable = DrawableCompat.wrap(view.getBackground());
-        DrawableCompat.setTint(wrappedDrawable.mutate(), color);
-        view.setBackground(wrappedDrawable);
+    @Override
+    public void onBackPressed() {
+
+        finish();
     }
 
     @Override
-    public void onBackPressed() {
-        if (editTextSearch.hasFocus()) {
+    public boolean onCreateOptionsMenu(Menu menu) {
 
-            //hide soft keyboard
-            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-            if (getCurrentFocus() != null) {
-                imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
-            }
+        getMenuInflater().inflate(R.menu.search_menu, menu);
 
-            //clear focus
-            editTextSearch.clearComposingText();
-            editTextSearch.clearFocus();
-        } else {
-            finish();
-        }
+        MenuItem search = menu.findItem(R.id.search);
+        SearchView searchView = (SearchView) search.getActionView();
+        initQueryTextListener(searchView);
+
+        return true;
     }
 
     @Override
@@ -109,8 +99,6 @@ public class ChooseIconActivity extends AppCompatActivity {
             }
         });
 
-        editTextSearch = findViewById(R.id.edtSearch);
-
         mCurrentPackageName = getIntent().getStringExtra("app_package");
         mCurrentPackageLabel = getIntent().getStringExtra("app_label");
         mIconPackPackageName = getIntent().getStringExtra("icon_pack_package");
@@ -127,20 +115,8 @@ public class ChooseIconActivity extends AppCompatActivity {
         mIconsGrid.setLayoutManager(mGridLayout);
         mIconsGrid.setAlpha(0.0f);
         toolbar.setAlpha(0.0f);
-        editTextSearch.setAlpha(0.0f);
 
-        final int accent = Utilities.getColorAccent(this);
-        final int opaqueAccent = ColorUtils.setAlphaComponent(accent, 100);
-        tintWidget(editTextSearch, opaqueAccent);
-
-        // Update the hint to contain the icon.
-        // Prefix the original hint with two spaces. The first space gets replaced by the icon
-        // using span. The second space is used for a singe space character between the hint
-        // and the icon.
-        SpannableString spanned = new SpannableString("  " + editTextSearch.getHint());
-        spanned.setSpan(new TintedDrawableSpan(this, R.drawable.ic_allapps_search),
-                0, 1, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-        editTextSearch.setHint(spanned);
+        mIconSize = getResources().getDimensionPixelSize(R.dimen.icon_pack_icon_size);
 
         final View appIcon = findViewById(R.id.app_icon);
 
@@ -167,41 +143,31 @@ public class ChooseIconActivity extends AppCompatActivity {
 
                         mIconsGrid.animate().alpha(1.0f);
                         toolbar.animate().alpha(1.0f);
-                        editTextSearch.animate().alpha(1.0f);
-
-                        editTextSearch.addTextChangedListener(new TextWatcher() {
-                            @Override
-                            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                            }
-
-                            @Override
-                            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                            }
-
-                            @Override
-                            public void afterTextChanged(Editable editable) {
-
-                                String mQuery = editable.toString();
-                                IconsSearchUtils.filter(mQuery, matchingIcons, allIcons, mGridAdapter);
-                            }
-                        });
-
-                        editTextSearch.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-                            @Override
-                            public void onFocusChange(View view, boolean hasFocus) {
-
-                                if (hasFocus) tintWidget(editTextSearch, accent);
-                            }
-                        });
                     }
                 });
             }
         }).start();
     }
 
-    class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
+    private void initQueryTextListener(SearchView searchView) {
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                IconsSearchUtils.filter(newText, matchingIcons, allIcons, mGridAdapter);
+                return true;
+            }
+        });
+    }
+
+    class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> implements Filterable {
 
         private static final int TYPE_MATCHING_HEADER = 0;
         private static final int TYPE_MATCHING_ICONS = 1;
@@ -242,6 +208,23 @@ public class ChooseIconActivity extends AppCompatActivity {
         }
 
         @Override
+        public Filter getFilter() {
+
+            return new Filter() {
+                @Override
+                protected FilterResults performFiltering(CharSequence charSequence) {
+
+                    return new FilterResults();
+                }
+
+                @Override
+                protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+                    //do nothing
+                }
+            };
+        }
+
+        @Override
         public int getItemViewType(int position) {
             if (!mNoMatchingDrawables && position < mMatchingDrawables.size() &&
                     mMatchingDrawables.get(position) == null) {
@@ -263,7 +246,7 @@ public class ChooseIconActivity extends AppCompatActivity {
 
         @Override
         public int getItemCount() {
-            return mAllDrawables.size();
+            return mAllDrawables.size() + 1;
         }
 
         @Override
@@ -282,7 +265,11 @@ public class ChooseIconActivity extends AppCompatActivity {
                 return new ViewHolder(text);
             }
 
-            return new ViewHolder(getLayoutInflater().inflate(R.layout.icon_item, nullParent));
+            ImageView view = new ImageView(ChooseIconActivity.this);
+            RecyclerView.LayoutParams params = new RecyclerView.LayoutParams(
+                    RecyclerView.LayoutParams.MATCH_PARENT, mIconSize);
+            view.setLayoutParams(params);
+            return new ViewHolder(view);
         }
 
         @Override
@@ -316,23 +303,14 @@ public class ChooseIconActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 if (icon != null) {
-
-                    holder.icon.setImageDrawable(icon);
-                    holder.label.setText(drawable);
+                    ((ImageView) holder.itemView).setImageDrawable(icon);
                 }
             }
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
-
-            private TextView label;
-            private ImageView icon;
-
             private ViewHolder(View v) {
                 super(v);
-
-                icon = itemView.findViewById(R.id.icon);
-                label = itemView.findViewById(R.id.name);
             }
         }
     }

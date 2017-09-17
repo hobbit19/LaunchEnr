@@ -4,6 +4,7 @@
     <!-- Icons shit -->
     <dimen name="edit_dialog_min_width">200dp</dimen>
     <dimen name="grid_item_spacing">10dp</dimen>
+    <dimen name="icon_pack_icon_size">48dp</dimen>
 
     <!-- Dynamic Grid -->
     <dimen name="dynamic_grid_edge_margin">8dp</dimen>

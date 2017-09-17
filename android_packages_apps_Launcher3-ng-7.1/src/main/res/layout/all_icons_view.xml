@@ -35,39 +35,11 @@
             android:text="@string/loading" />
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/search_container"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/all_apps_search_bar_height"
-        android:layout_gravity="center|top"
-        android:gravity="center|bottom"
-        android:layout_below="@+id/toolbar"
-        android:orientation="horizontal"
-        android:paddingTop="@dimen/all_apps_search_bar_margin_top"
-        android:layout_marginStart="@dimen/all_apps_search_bar_margin_top"
-        android:layout_marginEnd="@dimen/all_apps_search_bar_margin_top"
-        android:saveEnabled="false">
-
-        <EditText
-            android:id="@+id/edtSearch"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:focusableInTouchMode="true"
-            android:gravity="center"
-            android:hint="@string/search_icons_hint"
-            android:inputType="text|textNoSuggestions"
-            android:maxLines="1"
-            android:scrollHorizontally="true"
-            android:textColor="?attr/colorAccent"
-            android:textColorHint="@drawable/all_apps_search_hint"
-            android:textSize="16sp" />
-    </FrameLayout>
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/icons_grid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/search_container"
+        android:layout_below="@+id/toolbar"
         android:layout_centerInParent="true"
         android:scrollbars="vertical" />
 </RelativeLayout>
