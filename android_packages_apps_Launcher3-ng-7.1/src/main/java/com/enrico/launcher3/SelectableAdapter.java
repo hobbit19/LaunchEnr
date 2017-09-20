@@ -16,7 +16,6 @@
 
 package com.enrico.launcher3;
 
-import android.app.ActionBar;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -35,15 +34,13 @@ abstract class SelectableAdapter<VH extends RecyclerView.ViewHolder> extends Rec
 
         mContext = LauncherAppState.getInstanceNoCreate().getContext();
 
-        Set<String> mHiddenApps = PreferenceManager.getDefaultSharedPreferences(mContext).getStringSet(Utilities.KEY_HIDDEN_APPS_SET, null);;
+        Set<String> hiddenApps = PreferenceManager.getDefaultSharedPreferences(mContext).getStringSet(Utilities.KEY_HIDDEN_APPS_SET, null);;
 
         mSelections = new HashSet<>();
 
         //add already hidden apps to selections
-        if (mHiddenApps != null && mHiddenApps.size()!=0) {
-            for (String hiddenItem: mHiddenApps) {
-                mSelections.add(hiddenItem);
-            }
+        if (hiddenApps != null && !hiddenApps.isEmpty()) {
+                mSelections.addAll(hiddenApps);
         }
     }
 
@@ -60,7 +57,7 @@ abstract class SelectableAdapter<VH extends RecyclerView.ViewHolder> extends Rec
         } else {
             mSelections.add(packageName);
         }
-        if (mSelections.size() != 0) {
+        if (!mSelections.isEmpty()) {
             toolbar.setTitle(String.valueOf(mSelections.size()) + mContext.getString(R.string.hide_app_selected));
         } else {
             toolbar.setTitle(mContext.getString(R.string.hidden_app));

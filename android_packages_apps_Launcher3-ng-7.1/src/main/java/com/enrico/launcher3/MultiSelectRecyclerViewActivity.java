@@ -58,7 +58,7 @@ public class MultiSelectRecyclerViewActivity extends AppCompatActivity implement
     private void updateHiddenApps() {
 
         mAdapter.addSelectionsToHideList(MultiSelectRecyclerViewActivity.this);
-        LauncherAppState appState = LauncherAppState.getInstance();
+        LauncherAppState appState = LauncherAppState.getInstanceNoCreate();
         if (appState != null) {
             appState.getModel().forceReload();
         }
@@ -99,7 +99,7 @@ public class MultiSelectRecyclerViewActivity extends AppCompatActivity implement
 
         Set<String> mSelectedApps = PreferenceManager.getDefaultSharedPreferences(MultiSelectRecyclerViewActivity.this).getStringSet(Utilities.KEY_HIDDEN_APPS_SET, null);
         if (mSelectedApps != null) {
-            if (mSelectedApps.size() != 0) {
+            if (!mSelectedApps.isEmpty()) {
                 getSupportActionBar().setTitle(String.valueOf(mSelectedApps.size()) + getString(R.string.hide_app_selected));
             } else {
                 getSupportActionBar().setTitle(getString(R.string.hidden_app));
