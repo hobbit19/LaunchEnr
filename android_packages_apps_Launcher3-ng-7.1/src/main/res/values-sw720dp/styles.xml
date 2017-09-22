@@ -1,33 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-
-    <style name="BaseLauncherTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:colorBackgroundCacheHint">@null</item>
-        <item name="android:windowShowWallpaper">true</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowActionModeOverlay">true</item>
-        <item name="windowBg">@color/material_light_o</item>
-        <item name="themeText">@color/material_dark</item>
-        <item name="cardBg">@color/material_light</item>
-        <item name="info">@drawable/ic_information_black</item>
-        <item name="check">@drawable/ic_check_circle</item>
-    </style>
-
-    <style name="BaseLauncherThemeDark" parent="@style/Theme.AppCompat.NoActionBar">
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:colorBackgroundCacheHint">@null</item>
-        <item name="android:windowShowWallpaper">true</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowActionModeOverlay">true</item>
-        <item name="windowBg">@color/material_dark</item>
-        <item name="cardBg">@color/material_dark_default</item>
-        <item name="themeText">@color/material_light</item>
-        <item name="info">@drawable/ic_information_white</item>
-        <item name="check">@drawable/ic_check_circle_white</item>
-    </style>
-
+    
     <!-- Workspace -->
     <style name="DropTargetButton" parent="DropTargetButtonBase">
         <item name="android:paddingLeft">60dp</item>
