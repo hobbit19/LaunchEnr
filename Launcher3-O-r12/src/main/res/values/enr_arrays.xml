@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Theme options-->
+    <string-array name="theme_options">
+        <item>@string/default_theme</item>
+        <item>@string/red</item>
+        <item>@string/pink</item>
+        <item>@string/purple</item>
+        <item>@string/deep_purple</item>
+        <item>@string/indigo</item>
+        <item>@string/blue</item>
+        <item>@string/light_blue</item>
+        <item>@string/cyan</item>
+        <item>@string/teal</item>
+        <item>@string/green</item>
+        <item>@string/amber</item>
+        <item>@string/orange</item>
+        <item>@string/deep_orange</item>
+        <item>@string/brown</item>
+        <item>@string/blue_grey</item>
+    </string-array>
+    <string-array name="pref_theme_list_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+
+    <!-- fling down -->
+    <string-array name="fling_options">
+        <item>@string/fling_down_disabled</item>
+        <item>@string/fling_down_search</item>
+        <item>@string/fling_down_expand_sb</item>
+        <item>@string/fling_down_board</item>
+    </string-array>
+    <string-array name="pref_fling_values">
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+    </string-array>
+
+    <!-- hotseat color -->
+    <string-array name="hotseat_color_options">
+        <item>@string/hotseat_default</item>
+        <item>@string/hotseat_transparent</item>
+        <item>@string/hotseat_extracted</item>
+        <item>@string/hotseat_accent</item>
+    </string-array>
+    <string-array name="hotseat_color_values">
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+    </string-array>
+
+    <!-- Material solid color -->
+    <string-array name="wallpaper_type_list">
+        <item>@string/wallpaper_type_both</item>
+        <item>@string/wallpaper_type_system</item>
+        <item>@string/wallpaper_type_lock</item>
+    </string-array>
+
+    <!-- Icon styles -->
+    <string-array name="icon_styles_options">
+        <item>@string/none</item>
+        <item>@string/default_round</item>
+        <item>@string/enr_round</item>
+    </string-array>
+    <string-array name="icon_styles_values">
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+    </string-array>
+</resources>

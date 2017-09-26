@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Light Theme -->
+    <style name="SecondaryTheme" parent="@android:style/Theme.DeviceDefault.Light">
+        <item name="themeText">@color/material_dark</item>
+        <item name="windowBg">@color/material_light_o</item>
+        <item name="android:windowBackground">@color/material_light_o</item>
+        <item name="android:dialogTheme">@style/DialogStyle</item>
+        <item name="android:alertDialogTheme">@style/DialogStyle</item>
+    </style>
+
+    <style name="Secondary.Theme" parent="SecondaryTheme">
+        <item name="android:colorAccent">@color/accent</item>
+    </style>
+
+    <!-- Theme colors -->
+    <style name="Secondary.Theme.Red" parent="SecondaryTheme">
+        <item name="android:colorAccent">@color/material_red_400</item>
+    </style>
+
+    <style name="Secondary.Theme.Pink" parent="SecondaryTheme">
+        <item name="android:colorAccent">@color/material_pink_400</item>
+    </style>
+
+    <style name="Secondary.Theme.Purple" parent="SecondaryTheme">
+        <item name="android:colorAccent">@color/material_purple_400</item>
+    </style>
+
+    <style name="Secondary.Theme.DeepPurple" parent="SecondaryTheme">
+        <item name="android:colorAccent">@color/material_deep_purple_400</item>
+    </style>
+
+    <style name="Secondary.Theme.Indigo" parent="SecondaryTheme">
+        <item name="android:colorAccent">@color/material_indigo_400</item>
+    </style>
+
+    <style name="Secondary.Theme.Blue" parent="SecondaryTheme">
+        <item name="android:colorAccent">@color/material_blue_400</item>
+    </style>
+
+    <style name="Secondary.Theme.LightBlue" parent="SecondaryTheme">
+        <item name="android:colorAccent">@color/material_light_blue_400</item>
+    </style>
+
+    <style name="Secondary.Theme.Cyan" parent="SecondaryTheme">
+        <item name="android:colorAccent">@color/material_cyan_400</item>
+    </style>
+
+    <style name="Secondary.Theme.Teal" parent="SecondaryTheme">
+        <item name="android:colorAccent">@color/material_teal_400</item>
+    </style>
+
+    <style name="Secondary.Theme.Green" parent="SecondaryTheme">
+        <item name="android:colorAccent">@color/material_green_400</item>
+    </style>
+
+    <style name="Secondary.Theme.Amber" parent="SecondaryTheme">
+        <item name="android:colorAccent">@color/material_amber_400</item>
+    </style>
+
+    <style name="Secondary.Theme.Orange" parent="SecondaryTheme">
+        <item name="android:colorAccent">@color/material_orange_400</item>
+    </style>
+
+    <style name="Secondary.Theme.DeepOrange" parent="SecondaryTheme">
+        <item name="android:colorAccent">@color/material_deep_orange_400</item>
+    </style>
+
+    <style name="Secondary.Theme.Brown" parent="SecondaryTheme">
+        <item name="android:colorAccent">@color/material_brown_400</item>
+    </style>
+
+    <style name="Secondary.Theme.BlueGrey" parent="SecondaryTheme">
+        <item name="android:colorAccent">@color/material_blue_grey_400</item>
+    </style>
+
+    <style name="DialogStyle" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:colorAccent">?attr/themeText</item>
+    </style>
+
+    <!-- Dark Theme -->
+    <style name="SecondaryThemeDark" parent="@android:style/Theme.DeviceDefault">
+        <item name="themeText">@color/material_light_o</item>
+        <item name="windowBg">@color/material_dark</item>
+        <item name="android:windowBackground">@color/material_dark</item>
+        <item name="android:dialogTheme">@style/DialogStyleDark</item>
+        <item name="android:alertDialogTheme">@style/DialogStyleDark</item>
+    </style>
+
+    <style name="Secondary.Theme.Dark" parent="SecondaryThemeDark">
+        <item name="android:colorAccent">@color/accent</item>
+    </style>
+
+    <!-- Theme colors -->
+    <style name="Secondary.Theme.Red.Dark" parent="SecondaryThemeDark">
+        <item name="android:colorAccent">@color/material_red_400</item>
+    </style>
+
+    <style name="Secondary.Theme.Pink.Dark" parent="SecondaryThemeDark">
+        <item name="android:colorAccent">@color/material_pink_400</item>
+    </style>
+
+    <style name="Secondary.Theme.Purple.Dark" parent="SecondaryThemeDark">
+        <item name="android:colorAccent">@color/material_purple_400</item>
+    </style>
+
+    <style name="Secondary.Theme.DeepPurple.Dark" parent="SecondaryThemeDark">
+        <item name="android:colorAccent">@color/material_deep_purple_400</item>
+    </style>
+
+    <style name="Secondary.Theme.Indigo.Dark" parent="SecondaryThemeDark">
+        <item name="android:colorAccent">@color/material_indigo_400</item>
+    </style>
+
+    <style name="Secondary.Theme.Blue.Dark" parent="SecondaryThemeDark">
+        <item name="android:colorAccent">@color/material_blue_400</item>
+    </style>
+
+    <style name="Secondary.Theme.LightBlue.Dark" parent="SecondaryThemeDark">
+        <item name="android:colorAccent">@color/material_light_blue_400</item>
+    </style>
+
+    <style name="Secondary.Theme.Cyan.Dark" parent="SecondaryThemeDark">
+        <item name="android:colorAccent">@color/material_cyan_400</item>
+    </style>
+
+    <style name="Secondary.Theme.Teal.Dark" parent="SecondaryThemeDark">
+        <item name="android:colorAccent">@color/material_teal_400</item>
+    </style>
+
+    <style name="Secondary.Theme.Green.Dark" parent="SecondaryThemeDark">
+        <item name="android:colorAccent">@color/material_green_400</item>
+    </style>
+
+    <style name="Secondary.Theme.Amber.Dark" parent="SecondaryThemeDark">
+        <item name="android:colorAccent">@color/material_amber_400</item>
+    </style>
+
+    <style name="Secondary.Theme.Orange.Dark" parent="SecondaryThemeDark">
+        <item name="android:colorAccent">@color/material_orange_400</item>
+    </style>
+
+    <style name="Secondary.Theme.DeepOrange.Dark" parent="SecondaryThemeDark">
+        <item name="android:colorAccent">@color/material_deep_orange_400</item>
+    </style>
+
+    <style name="Secondary.Theme.Brown.Dark" parent="SecondaryThemeDark">
+        <item name="android:colorAccent">@color/material_brown_400</item>
+    </style>
+
+    <style name="Secondary.Theme.BlueGrey.Dark" parent="SecondaryThemeDark">
+        <item name="android:colorAccent">@color/material_blue_grey_400</item>
+    </style>
+
+    <!-- Folder edit text cursor color -->
+    <style name="FolderEditText">
+        <item name="android:colorControlActivated">?attr/themeText</item>
+    </style>
+
+    <style name="DialogStyleDark" parent="android:Theme.Material.Dialog">
+        <item name="android:colorAccent">?attr/themeText</item>
+    </style>
+</resources>

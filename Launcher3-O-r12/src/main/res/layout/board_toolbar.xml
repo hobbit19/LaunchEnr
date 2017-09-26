@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/board_bar"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:layout_marginEnd="16dp">
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/ripple"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_cancel" />
+
+    <ImageButton
+        android:id="@+id/edit"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/ripple"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_edit" />
+
+    <TextView
+        android:layout_toEndOf="@+id/edit"
+        android:layout_centerVertical="true"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Widget.ActionBar.Title"
+        android:id="@+id/board_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="32dp"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:textStyle="bold"
+        android:textColor="?attr/themeText" />
+</RelativeLayout>

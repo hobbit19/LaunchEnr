@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- About -->
+    <string name="about" translatable="false">About LaunchEnr&#160;</string>
+    <string name="me_link" translatable="false">https://plus.google.com/u/0/+EnricoDortenzio</string>
+    <string name="credits" translatable="false">Credits</string>
+    <string name="material_icons_link" translatable="false">https://materialdesignicons.com</string>
+    <string name="evervol_link" translatable="false">https://github.com/Evervolv</string>
+    <string name="aospa_link" translatable="false">http://get.aospa.co</string>
+    <string name="stack_link" translatable="false">https://stackoverflow.com</string>
+    <string name="aosp_link" translatable="false">https://android.googlesource.com</string>
+    <string name="git_link" translatable="false">https://github.com/enricocid/LaunchEnr</string>
+    <string name="me" translatable="false">&#169;2017 by Enrico D\'Ortenzio</string>
+    <string name="material_icons" translatable="false">Material icons</string>
+    <string name="evervol" translatable="false">Evervol</string>
+    <string name="aospa" translatable="false">Paranoid Android</string>
+    <string name="stack" translatable="false">Stack Overflow</string>
+    <string name="aosp" translatable="false">Aosp</string>
+    <string name="git">Source code</string>
+    <string name="privacy_policy" translatable="false">Privacy policy</string>
+    <string name="privacy_policy_sum">Click to read the policy about requested permissions</string>
+    <string name="privacy_policy_link" translatable="false">https://git.io/v50Lh</string>
+
+    <!-- Preferences title, summaries -->
+    <string name="pinch_to_overview">Pinch to overview</string>
+    <string name="light_status_bar">Dynamic UI</string>
+    <string name="light_status_bar_sum">When enabled the status bar may show dark icons based on the top of the wallpaper</string>
+    <string name="show_badge">Show badge</string>
+    <string name="show_badge_sum">Show a dot when notification is received</string>
+    <string name="show_unread_count">Numeric badge</string>
+    <string name="show_unread_count_sum">Show a unread notifications number inside the dot</string>
+    <string name="android_O_only">This option is available only from android Oreo</string>
+    <string name="more">More</string>
+    <string name="ui">UI things</string>
+    <string name="icons">Icons</string>
+    <string name="icon_pack">Icon pack</string>
+    <string name="icon_pack_summary">Select an icon pack</string>
+    <string name="default_iconpack_title">Default icons</string>
+    <string name="badges" translatable="false">Badges</string>
+    <string name="random_icon">Change icons</string>
+    <string name="hint">Hint:</string>
+    <string name="random_icon_hint">To change icons on the fly enable the \"change icons\" tile in Quick Settings!</string>
+    <string name="dt_to_lock">Double tap to lock</string>
+    <string name="board_title">Change board title</string>
+    <string name="colored_folders">Colored folders</string>
+    <string name="colored_folders_sum">The theme of the folders will follow the theme accent</string>
+    <string name="hide_app">Hide app</string>
+    <string name="hide_app_sum">Hide app from the app drawer</string>
+    <string name="none">None</string>
+    <string name="default_round">Default round</string>
+    <string name="enr_round">Colorful round</string>
+    <string name="icon_style">Icons style</string>
+    <string name="round_icons">Round icons</string>
+    <string name="round_icons_sum">Use round icons when available</string>
+    <string name="pref_hotseat">Dock color</string>
+    <string name="hotseat_default">Default</string>
+    <string name="hotseat_transparent">Transparent</string>
+    <string name="hotseat_extracted">Wallpaper extracted</string>
+    <string name="hotseat_accent">Theme accent</string>
+
+    <!-- Hidden app -->
+    <string name="hide_app_selected">&#160;selected</string>
+    <string name="hidden_app">Hidden app</string>
+    <string name="hide_selected">Hide selected app</string>
+
+    <!-- Board -->
+    <string name="board" translatable="false">Board</string>
+    <string name="u_sure">Are you sure?</string>
+    <string name="delete">Delete</string>
+    <string name="notes">Notes</string>
+    <string name="add_note">Add note</string>
+    <string name="add">Add</string>
+    <string name="note_title">Title goes here&#8230;</string>
+    <string name="note_body">Body goes here&#8230;</string>
+    <string name="note_priority">Priority</string>
+    <string name="contacts">Frequent contacts</string>
+    <string name="choose_number">Choose number</string>
+    <string name="do_something">What to do?</string>
+    <string name="copied">Note copied to clipboard</string>
+    <string name="share_with">Share with&#8230;</string>
+    <string name="share">Share</string>
+    <string name="show">Show</string>
+    <string name="hide">Hide</string>
+    <string name="custom_app" translatable="false">Custom app</string>
+    <string name="custom_app_sum">Select your preferred app</string>
+    <string name="custom_app_edit">Select app</string>
+
+    <!-- icons -->
+    <string name="edit_app">Edit</string>
+    <string name="reset_icon" translatable="false">Reset</string>
+    <string name="all_icons">Other icons</string>
+    <string name="similar_icons">Similar icons</string>
+    <string name="icon_label">Label</string>
+    <string name="loading">Loading&#8230;</string>
+    <string name="dots" translatable="false">&#8230;</string>
+    <string name="icon_chooser">Icon chooser</string>
+    <string name="icon_search">Search for icons</string>
+
+    <!-- others -->
+    <string name="no_search_provider">No search provider where found</string>
+
+    <!-- Permissions -->
+    <string name="phone_permission_denied">Call phone permission denied. No access no call&#8230;</string>
+    <string name="phone_permission_granted">Call phone permission granted. It\'s time to make some call&#8230;</string>
+    <string name="contacts_permission_denied">Read contacts permission denied. Shelf will be disabled&#8230;</string>
+    <string name="contacts_permission_granted">Read contacts permission granted. Enabling shelf&#8230;</string>
+
+    <!-- Solid colors picker -->
+    <string name="solid">Material color</string>
+    <string name="wallpaper_type_dialog_title">Set wallpaper</string>
+    <string name="wallpaper_type_both">Home screen and lock screen</string>
+    <string name="wallpaper_type_system">Home screen</string>
+    <string name="wallpaper_type_lock">Lock screen</string>
+
+    <!-- Theme options -->
+    <string name="dark_theme">Enable dark theme</string>
+    <string name="pref_theme_title">Accent color</string>
+    <string name="theme_sum">Change the Launcher accent color</string>
+    <string name="pref_theme_list" translatable="false">pref_theme_list</string>
+    <string name="default_theme">Default</string>
+
+    <string name="red">Red</string>
+    <string name="pink">Pink</string>
+    <string name="purple">Purple</string>
+    <string name="deep_purple">Deep purple</string>
+    <string name="indigo">Indigo</string>
+    <string name="blue">Blue</string>
+    <string name="light_blue">Light blue</string>
+    <string name="cyan">Cyan</string>
+    <string name="teal">Teal</string>
+    <string name="green">Green</string>
+    <string name="amber">Amber</string>
+    <string name="orange">Orange</string>
+    <string name="deep_orange">Deep orange</string>
+    <string name="brown">Brown</string>
+    <string name="blue_grey">Blue grey</string>
+
+    <!-- Text for storage and devicesettings button -->
+    <string name="storage_button_text">Storage</string>
+    <string name="device_settings_text">Device settings</string>
+
+    <!-- Fling down to do something -->
+    <string name="fling_down">Fling down to &#8230;?</string>
+    <string name="fling_down_disabled">Nothing</string>
+    <string name="fling_down_search">Search</string>
+    <string name="fling_down_expand_sb">Status bar</string>
+    <string name="fling_down_board">@string/board</string>
+</resources>

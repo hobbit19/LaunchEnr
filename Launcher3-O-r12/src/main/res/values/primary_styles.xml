@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Light Theme -->
+    <style name="BaseLauncherTheme" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="windowBg">@color/material_light_o</item>
+        <item name="themeText">@color/material_dark</item>
+        <item name="cardBg">@color/material_light</item>
+        <item name="navBarBg">@color/transBlack</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowShowWallpaper">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">#00000000</item>
+        <item name="android:navigationBarColor">#00000000</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="Base.Theme" parent="BaseLauncherTheme">
+        <item name="android:colorAccent">@color/accent</item>
+    </style>
+
+    <!-- Theme colors -->
+    <style name="Base.Theme.Red" parent="BaseLauncherTheme">
+        <item name="android:colorAccent">@color/material_red_400</item>
+    </style>
+
+    <style name="Base.Theme.Pink" parent="BaseLauncherTheme">
+        <item name="android:colorAccent">@color/material_pink_400</item>
+    </style>
+
+    <style name="Base.Theme.Purple" parent="BaseLauncherTheme">
+        <item name="android:colorAccent">@color/material_purple_400</item>
+    </style>
+
+    <style name="Base.Theme.DeepPurple" parent="BaseLauncherTheme">
+        <item name="android:colorAccent">@color/material_deep_purple_400</item>
+    </style>
+
+    <style name="Base.Theme.Indigo" parent="BaseLauncherTheme">
+        <item name="android:colorAccent">@color/material_indigo_400</item>
+    </style>
+
+    <style name="Base.Theme.Blue" parent="BaseLauncherTheme">
+        <item name="android:colorAccent">@color/material_blue_400</item>
+    </style>
+
+    <style name="Base.Theme.LightBlue" parent="BaseLauncherTheme">
+        <item name="android:colorAccent">@color/material_light_blue_400</item>
+    </style>
+
+    <style name="Base.Theme.Cyan" parent="BaseLauncherTheme">
+        <item name="android:colorAccent">@color/material_cyan_400</item>
+    </style>
+
+    <style name="Base.Theme.Teal" parent="BaseLauncherTheme">
+        <item name="android:colorAccent">@color/material_teal_400</item>
+    </style>
+
+    <style name="Base.Theme.Green" parent="BaseLauncherTheme">
+        <item name="android:colorAccent">@color/material_green_400</item>
+    </style>
+
+    <style name="Base.Theme.Amber" parent="BaseLauncherTheme">
+        <item name="android:colorAccent">@color/material_amber_400</item>
+    </style>
+
+    <style name="Base.Theme.Orange" parent="BaseLauncherTheme">
+        <item name="android:colorAccent">@color/material_orange_400</item>
+    </style>
+
+    <style name="Base.Theme.DeepOrange" parent="BaseLauncherTheme">
+        <item name="android:colorAccent">@color/material_deep_orange_400</item>
+    </style>
+
+    <style name="Base.Theme.Brown" parent="BaseLauncherTheme">
+        <item name="android:colorAccent">@color/material_brown_400</item>
+    </style>
+
+    <style name="Base.Theme.BlueGrey" parent="BaseLauncherTheme">
+        <item name="android:colorAccent">@color/material_blue_grey_400</item>
+    </style>
+
+    <!-- Dark Theme -->
+    <style name="BaseLauncherThemeDark" parent="@android:style/Theme.DeviceDefault.NoActionBar">
+        <item name="windowBg">@color/material_dark</item>
+        <item name="cardBg">@color/material_dark_default</item>
+        <item name="themeText">@color/material_light</item>
+        <item name="navBarBg">@color/transWhite</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowShowWallpaper">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">#00000000</item>
+        <item name="android:navigationBarColor">#00000000</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="Base.Theme.Dark" parent="BaseLauncherThemeDark">
+        <item name="android:colorAccent">@color/accent</item>
+    </style>
+
+    <!-- Theme colors -->
+    <style name="Base.Theme.Red.Dark" parent="BaseLauncherThemeDark">
+        <item name="android:colorAccent">@color/material_red_400</item>
+    </style>
+
+    <style name="Base.Theme.Pink.Dark" parent="BaseLauncherThemeDark">
+        <item name="android:colorAccent">@color/material_pink_400</item>
+    </style>
+
+    <style name="Base.Theme.Purple.Dark" parent="BaseLauncherThemeDark">
+        <item name="android:colorAccent">@color/material_purple_400</item>
+    </style>
+
+    <style name="Base.Theme.DeepPurple.Dark" parent="BaseLauncherThemeDark">
+        <item name="android:colorAccent">@color/material_deep_purple_400</item>
+    </style>
+
+    <style name="Base.Theme.Indigo.Dark" parent="BaseLauncherThemeDark">
+        <item name="android:colorAccent">@color/material_indigo_400</item>
+    </style>
+
+    <style name="Base.Theme.Blue.Dark" parent="BaseLauncherThemeDark">
+        <item name="android:colorAccent">@color/material_blue_400</item>
+    </style>
+
+    <style name="Base.Theme.LightBlue.Dark" parent="BaseLauncherThemeDark">
+        <item name="android:colorAccent">@color/material_light_blue_400</item>
+    </style>
+
+    <style name="Base.Theme.Cyan.Dark" parent="BaseLauncherThemeDark">
+        <item name="android:colorAccent">@color/material_cyan_400</item>
+    </style>
+
+    <style name="Base.Theme.Teal.Dark" parent="BaseLauncherThemeDark">
+        <item name="android:colorAccent">@color/material_teal_400</item>
+    </style>
+
+    <style name="Base.Theme.Green.Dark" parent="BaseLauncherThemeDark">
+        <item name="android:colorAccent">@color/material_green_400</item>
+    </style>
+
+    <style name="Base.Theme.Amber.Dark" parent="BaseLauncherThemeDark">
+        <item name="android:colorAccent">@color/material_amber_400</item>
+    </style>
+
+    <style name="Base.Theme.Orange.Dark" parent="BaseLauncherThemeDark">
+        <item name="android:colorAccent">@color/material_orange_400</item>
+    </style>
+
+    <style name="Base.Theme.DeepOrange.Dark" parent="BaseLauncherThemeDark">
+        <item name="android:colorAccent">@color/material_deep_orange_400</item>
+    </style>
+
+    <style name="Base.Theme.Brown.Dark" parent="BaseLauncherThemeDark">
+        <item name="android:colorAccent">@color/material_brown_400</item>
+    </style>
+
+    <style name="Base.Theme.BlueGrey.Dark" parent="BaseLauncherThemeDark">
+        <item name="android:colorAccent">@color/material_blue_grey_400</item>
+    </style>
+
+    <style name="Theme" parent="BaseLauncherTheme" />
+</resources>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2015 Google Inc.
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/ui" />
+
+    <com.enrico.launcher3.theme.ThemePreference
+        android:defaultValue="0"
+        android:key="pref_chooseTheme"
+        android:persistent="true"
+        android:summary="?android:attr/colorAccent"
+        android:title="@string/pref_theme_title" />
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="pref_lightOrDark"
+        android:title="@string/dark_theme" />
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="pref_lightStatus"
+        android:persistent="true"
+        android:summary="@string/light_status_bar_sum"
+        android:title="@string/light_status_bar" />
+
+    <ListPreference
+        android:defaultValue="19"
+        android:entries="@array/hotseat_color_options"
+        android:entryValues="@array/hotseat_color_values"
+        android:key="pref_hotseatColor"
+        android:summary="%s"
+        android:title="@string/pref_hotseat" />
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="pref_coloredFolders"
+        android:summary="@string/colored_folders_sum"
+        android:title="@string/colored_folders" />
+
+    <PreferenceCategory android:title="@string/icons" />
+
+    <com.enrico.launcher3.icons.IconPackPreference
+        android:key="pref_iconPackPackage"
+        android:persistent="true"
+        android:summary="@string/icon_pack_summary"
+        android:title="@string/icon_pack" />
+
+    <ListPreference
+        android:defaultValue="23"
+        android:entries="@array/icon_styles_options"
+        android:entryValues="@array/icon_styles_values"
+        android:key="pref_roundIcons"
+        android:summary="%s"
+        android:title="@string/icon_style" />
+
+    <Preference
+        android:enabled="false"
+        android:summary="@string/random_icon_hint"
+        android:title="@string/hint" />
+
+    <ListPreference
+        android:defaultValue=""
+        android:entries="@array/icon_shape_override_paths_names"
+        android:entryValues="@array/icon_shape_override_paths_values"
+        android:key="pref_override_icon_shape"
+        android:persistent="false"
+        android:summary="%s"
+        android:title="@string/icon_shape_override_label" />
+
+    <PreferenceCategory android:title="@string/badges" />
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="pref_showBadge"
+        android:persistent="true"
+        android:summary="@string/show_badge_sum"
+        android:title="@string/show_badge" />
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="pref_numBadge"
+        android:persistent="true"
+        android:summary="@string/show_unread_count_sum"
+        android:title="@string/show_unread_count" />
+
+    <Preference
+        android:key="pref_icon_badging"
+        android:persistent="false"
+        android:title="@string/icon_badging_title">
+        <intent android:action="android.settings.NOTIFICATION_SETTINGS">
+            <!-- This extra highlights the "Allow icon badges" field in Notification settings -->
+            <extra
+                android:name=":settings:fragment_args_key"
+                android:value="notification_badging" />
+        </intent>
+    </Preference>
+
+    <PreferenceCategory android:title="@string/more" />
+
+    <ListPreference
+        android:defaultValue="16"
+        android:entries="@array/fling_options"
+        android:entryValues="@array/pref_fling_values"
+        android:key="pref_flingDown"
+        android:summary="%s"
+        android:title="@string/fling_down" />
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="pref_dtLock"
+        android:title="@string/dt_to_lock" />
+
+    <SwitchPreference
+        android:defaultValue="@bool/allow_rotation"
+        android:key="pref_allowRotation"
+        android:persistent="true"
+        android:title="@string/allow_rotation_title" />
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="pref_pinchOverview"
+        android:persistent="true"
+        android:title="@string/pinch_to_overview" />
+
+    <Preference
+        android:key="pref_hiddenApp"
+        android:summary="@string/hide_app_sum"
+        android:title="@string/hide_app" />
+</PreferenceScreen>

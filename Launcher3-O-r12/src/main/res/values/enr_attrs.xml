@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Themes -->
+    <attr name="windowBg" format="color" />
+    <attr name="themeText" format="color" />
+    <attr name="cardBg" format="color" />
+    <attr name="navBarBg" format="color" />
+</resources>
