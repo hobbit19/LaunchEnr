@@ -32,13 +32,4 @@ lightened Aosp launcher code and substitution of deprecated methods;
 ![ScreenShot](https://raw.githubusercontent.com/enricocid/LaunchEnr/master/art2_0.png)
 
 
-You can download the latest (2.0) signed APK from this repo here: https://github.com/enricocid/LaunchEnr/raw/master/Launcher3-O-r12/Launcher3-O-r12-release.apk
-
-
-The app is available on:
-
-Google Play Store
-
-<a href="https://play.google.com/store/apps/details?id=com.enrico.launcher3">
-  <img alt="Get it on Google Play"       src="https://raw.githubusercontent.com/enricocid/Storage-USB/master/art/gplay.png" />
-</a>
+You can download a signed APK from this repo here: https://github.com/enricocid/LaunchEnr/raw/master/Launcher3-O-r12/Launcher3-O-r12-release.apk
